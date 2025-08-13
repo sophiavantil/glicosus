@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GlicoSUS - Registrar Sintomas</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h2>Registrar Sintomas</h2>
+        <form id="formSintomas" class="registro-form">
+            
+            <label>Sintomas Comuns</label>
+            <div class="checkbox-group">
+                <div class="checkbox-item">
+                    <input type="checkbox" id="tontura" name="sintoma" value="Tontura">
+                    <label for="tontura">Tontura</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="dor_cabeca" name="sintoma" value="Dor de cabeça">
+                    <label for="dor_cabeca">Dor de cabeça</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="enjoo" name="sintoma" value="Enjoo">
+                    <label for="enjoo">Enjoo</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="fraqueza" name="sintoma" value="Fraqueza">
+                    <label for="fraqueza">Fraqueza</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="visao_turva" name="sintoma" value="Visão turva">
+                    <label for="visao_turva">Visão turva</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="outro" name="sintoma" value="Outro">
+                    <label for="outro">Outro</label>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="obs">Outras observações (se "Outro" for selecionado)</label>
+                <textarea id="obs" rows="3" placeholder="Descreva aqui outros sintomas..."></textarea>
+            </div>
+
+            <div class="form-group">
+                <label for="intensidade">Intensidade</label>
+                <select id="intensidade" required>
+                    <option value="" disabled selected>Selecione a intensidade...</option>
+                    <option value="leve">Leve</option>
+                    <option value="moderada">Moderada</option>
+                    <option value="intensa">Intensa</option>
+                </select>
+            </div>
+
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" required />
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" required />
+            </div>
+
+            <button type="submit">Salvar Registro</button>
+            
+            <div class="links">
+                <a href="index.html">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+<script>
+document.getElementById('formSintomas').addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const sintomas = Array.from(document.querySelectorAll('input[name="sintoma"]:checked')).map(i => i.value);
+    const intensidade = document.getElementById('intensidade').value;
+
+    const response = await fetch("http://localhost:3000/analisar-sintomas", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ sintomas, intensidade })
+    });
+
+    const data = await response.json();
+    alert("💡 Recomendação IA:\n" + data.recomendacao);
+    document.getElementById('formSintomas').reset();
+});
+</script>
+
+</body>
+</html>

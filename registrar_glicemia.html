@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GlicoSUS - Registrar Glicemia</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+</head>
+<body>
+    <div class="container">
+        <h2>Registrar Glicemia</h2>
+        <form id="registroForm" class="form-group">
+            <label for="glicemia-valor">Valor da Glicemia (mg/dL)</label>
+            <input type="number" id="glicemia-valor" placeholder="Ex: 95" required />
+
+            <div class="form-group">
+                <label for="data">Data</label>
+                <input type="date" id="data" required />
+            </div>
+
+            <div class="form-group">
+                <label for="hora">Hora</label>
+                <input type="time" id="hora" required />
+            </div>
+
+            <label for="obs">Observação</label>
+            <input type="text" id="obs" placeholder="Ex: Em jejum, pós-almoço..."/>
+
+            <button type="submit">Salvar Registro</button>
+            
+            <div class="links">
+                <a href="index.html">Voltar</a>
+            </div>
+        </form>
+    </div>
+
+<script>
+document.getElementById('registroForm').addEventListener('submit', async (e) => {
+    e.preventDefault();
+
+    const glicemia = Number(document.getElementById('glicemia-valor').value);
+
+    try {
+        const response = await fetch("http://localhost:3000/analisar-glicemia", {
+            method: "POST",
+            headers: { "Content-Type": "application/json" },
+            body: JSON.stringify({ glicemia })
+        });
+
+        const data = await response.json();
+        alert("💡 Recomendação IA:\n" + data.recomendacao);
+
+        // Aqui você poderia salvar localmente ou limpar o formulário
+        document.getElementById('registroForm').reset();
+
+    } catch (error) {
+        alert("❌ Erro ao gerar recomendação.");
+        console.error(error);
+    }
+});
+</script>
+
+</body>
+</html>

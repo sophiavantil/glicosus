@@ -1,0 +1,329 @@
+/* Define variáveis de cor globais para serem usadas em todo o site */
+:root {
+  --azul-sus: #004AAD;
+  --branco: #ffffff;
+  --cinza-claro: #f0f0f0;
+  --verde-sus: #3BB44A;
+  --vermelho-alerta: #D32F2F;
+  --amarelo: #FFC107;
+}
+
+/* Estilo do contêiner principal da tela de login e da home */
+.container {
+  max-width: 400px;
+  margin: auto;
+  padding: 2rem;
+  background-color: var(--branco);
+  margin-top: 5vh;
+  border-radius: 10px;
+  box-shadow: 0 0 10px #ccc;
+}
+
+/* Estilo da tela de login */
+.container.login {
+    text-align: center;
+}
+
+/* Estilo do título "GlicoSUS" na tela de login */
+.app-title {
+    font-size: 2.5rem;
+    color: var(--azul-sus); /* Use a cor principal do seu app */
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+}
+
+/* Estilo dos campos do formulário */
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--cinza-escuro);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; /* Garante que padding não altere a largura total */
+    font-size: 1rem;
+}
+
+/* Estilo do botão de login */
+.container.login button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--azul-sus);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.container.login button:hover {
+    background-color: #0c59a3; 
+}
+
+/* Estilo da mensagem de erro */
+.mensagem-erro {
+    color: var(--vermelho-alerta);
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Roboto, sans-serif;
+  background-color: var(--cinza-claro);
+  color: #333;
+}
+
+/* Estilo das etiquetas do formulário */
+.login-form label {
+  display: block;
+  margin-top: 1rem;
+  font-weight: bold;
+}
+
+/* Estilo dos campos de entrada do formulário */
+.login-form input {
+  width: 100%;
+  padding: 0.6rem;
+  margin-top: 0.3rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+/* Estilo geral dos botões */
+button {
+  margin-top: 1.5rem;
+  width: 100%;
+  padding: 0.8rem;
+  background-color: var(--azul-sus);
+  color: var(--branco);
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
+}
+
+/* Título */ 
+h2 {
+  text-align: center;
+  color: var(--azul-sus);
+}
+
+/* Define o layout em grade nos cards */
+.cards {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+/* Estilo padrão para todos os cards */
+.card {
+  background-color: var(--cinza-claro);
+  padding: 3rem;
+  text-align: center;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+/* Estilo para o parágrafo dentro de um card */
+.card p {
+  margin-top: 0.5rem;
+}
+
+/* Estilos específicos para cada tipo de card, apenas mudando a cor de fundo */
+.card.glicemia {
+  background-color: #E3F2FD;
+}
+
+.card.alimentacao {
+  background-color: #FFF8E1;
+}
+
+.card.sintomas {
+  background-color: #F5F5F5;
+}
+
+.card.historico {
+  background-color: #dff5eef2;
+}
+
+.card-link {
+  text-decoration: none;
+  color: inherit;
+}
+
+ /* página de histórico */
+.historico-item {
+  background-color: var(--cinza-claro);
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  border-left: 5px solid var(--azul-sus);
+}
+
+.historico-item h3 {
+  margin: 0 0 0.5rem 0;
+  color: var(--azul-sus);
+}
+
+.historico-item p {
+  margin: 0.2rem 0;
+}
+
+.historico-item span {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* Formulários */
+.registro-form {
+    text-align: center;
+}
+
+.form-group {
+    margin-bottom: 1rem;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    font-weight: bold;
+    color: var(--cinza-escuro);
+}
+
+.form-group input {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box; 
+    font-size: 1rem;
+}
+
+.registro-form button {
+    width: 100%;
+    padding: 0.75rem;
+    background-color: var(--azul-sus);
+    color: var(--branco);
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-bottom: 1rem; /* Adiciona espaço entre o botão e o link */
+}
+
+.registro-form button:hover {
+    background-color: #0c59a3;
+}
+
+.links {
+    margin-top: 1rem;
+}
+
+.links a {
+    color: var(--azul-sus);
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.links a:hover {
+    text-decoration: underline;
+}
+
+/* Estilos para os Checkboxes */
+
+.checkbox-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1rem;
+    justify-content: center;
+}
+
+.checkbox-item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    border: 1px solid #ccc;
+    border-radius: 20px;
+    padding: 0.5rem 1rem;
+    cursor: pointer;
+    user-select: none; /* Impede a seleção do texto */
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+.checkbox-item:hover {
+    background-color: #f0f0f0;
+}
+
+.checkbox-item input[type="checkbox"] {
+    position: absolute;
+    opacity: 0; /* Esconde o checkbox padrão */
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkbox-item label {
+    margin-bottom: 0; /* Remove a margem padrão do label */
+    font-weight: normal;
+    color: var(--cinza-escuro);
+    padding-left: 0.5rem; /* Espaço para o ícone */
+}
+
+/* Cria o círculo do checkbox personalizado */
+.checkbox-item label::before {
+    content: '';
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 50%;
+    border: 2px solid #ccc;
+    margin-right: 0.5rem;
+    vertical-align: middle;
+    transition: background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Estilo do checkbox quando está marcado */
+.checkbox-item input[type="checkbox"]:checked + label::before {
+    background-color: var(--vermelho-alerta); /* Usa a cor de alerta para indicar seleção */
+    border-color: var(--vermelho-alerta);
+}
+
+/* Adiciona um ícone de "check" dentro do círculo */
+.checkbox-item input[type="checkbox"]:checked + label::after {
+    content: '✔';
+    position: absolute;
+    top: 50%;
+    left: 1rem;
+    transform: translateY(-50%);
+    font-size: 0.8rem;
+    color: var(--branco);
+}
+
+.registro-form textarea,
+.registro-form select {
+    width: 100%;
+    padding: 0.75rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    box-sizing: border-box;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}

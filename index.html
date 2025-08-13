@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GlicoSUS - Início</title>
+  <link rel="stylesheet" href="assets/css/style.css"/>
+  <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+</head>
+<body>
+
+  <div class="container home">
+    <h2>Olá, Leia Organa!</h2>
+    <div class="cards">
+      <a href="registrar_glicemia.html" class="card-link">
+        <div class="card glicemia">🩸<p>Registrar Glicemia</p></div>
+      </a>
+      <a href="registrar_alimentacao.html" class="card-link">
+        <div class="card alimentacao">🍽️<p>Registrar Alimentação</p></div>
+      </a>
+      <a href="registrar_sintomas.html" class="card-link">
+        <div class="card sintomas">😷<p>Registrar Sintomas</p></div>
+      </a>
+      <a href="ver_historico.html" class="card-link">
+        <div class="card historico">📈<p>Ver Histórico</p></div>
+      </a>
+    </div>
+  </div>
+  
+  <script>
+    if (!localStorage.getItem('isLoggedIn')) {
+        window.location.href = 'login.html';
+    }
+  </script>
+
+</body>
+</html>

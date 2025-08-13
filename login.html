@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>GlicoSUS - Login</title>
+    <link rel="stylesheet" href="assets/css/style.css"/>
+    <link rel="icon" type="image/x-icon" href="assets/icon/favicon.ico">
+</head>
+<body>
+
+    <div class="container login">
+        <h2 class="app-title">GlicoSUS</h2>
+        <h3>Faça o login para continuar</h3>
+
+        <form id="loginForm">
+            <div class="form-group">
+                <label for="identificador">CPF ou Cartão do SUS:</label>
+                <input type="text" id="identificador" name="identificador" placeholder="Ex: 123.456.789-00 ou 123456789012345" required>
+            </div>
+            <div class="form-group">
+                <label for="senha">Senha:</label>
+                <input type="password" id="senha" name="senha" required>
+            </div>
+            <button type="submit">Entrar</button>
+        </form>
+
+        <p id="mensagemErro" class="mensagem-erro"></p>
+    </div>
+
+<script>
+    document.getElementById('loginForm').addEventListener('submit', function(event) {
+        event.preventDefault(); // Impede o envio do formulário padrão
+
+        const identificador = document.getElementById('identificador').value;
+        const senha = document.getElementById('senha').value;
+        const mensagemErro = document.getElementById('mensagemErro');
+
+        // Valida se os campos não estão vazios.
+        if (identificador && senha) {
+            
+            // não redireciona o usuário de volta.
+            localStorage.setItem('isLoggedIn', 'true');
+            
+            // Redireciona para a página inicial.
+            window.location.href = 'index.html';
+        } else {
+            mensagemErro.textContent = 'Por favor, preencha todos os campos.';
+        }
+    });
+</script>
+
+</body>
+</html>
