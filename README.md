@@ -104,7 +104,6 @@ Para interromper o servidor, pressione ``Ctrl + C`` no terminal.
 # Equipe e Professores
 
 Integrantes do Projeto:
-- Arthur Miguel
 - Guilherme Santoro
 - Madalena Almeida
 - Rafael Xavier
