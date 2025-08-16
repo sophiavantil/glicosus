@@ -48,7 +48,8 @@ O layout utiliza as cores do SUS e foi desenvolvido com foco em usabilidade e cl
 2. Abra ``login.html`` no navegador.
 3. Faça login com CPF ou Cartão SUS fictício.
 4. Use o menu para registrar glicemia, alimentação ou sintomas.
-5. Visualize o histórico de registros.
+
+🔗 https://www.youtube.com/watch?v=NsrvDEghBp8
 
 # Integração com Inteligência Artificial (Simulada)
 
